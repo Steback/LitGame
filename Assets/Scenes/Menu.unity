@@ -264,6 +264,30 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4078718595717528158, guid: bc6dbe33271526943b69ee595c05d31b, type: 3}
   m_PrefabInstance: {fileID: 79752338}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &134922950 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3733858335048704228, guid: bc6dbe33271526943b69ee595c05d31b, type: 3}
+  m_PrefabInstance: {fileID: 79752338}
+  m_PrefabAsset: {fileID: 0}
+--- !u!95 &134922951
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 134922950}
+  m_Enabled: 1
+  m_Avatar: {fileID: 9000000, guid: f977721663a94004ab99339c187e199b, type: 3}
+  m_Controller: {fileID: 9100000, guid: d7f3f9e562bf69f4098c5d37f091e887, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &159528889
 GameObject:
   m_ObjectHideFlags: 0
@@ -476,6 +500,7 @@ GameObject:
   - component: {fileID: 348672173}
   - component: {fileID: 348672172}
   - component: {fileID: 348672171}
+  - component: {fileID: 348672174}
   m_Layer: 5
   m_Name: Hip_Hop_Anim_Btn
   m_TagString: Untagged
@@ -585,6 +610,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 348672169}
   m_CullTransparentMesh: 1
+--- !u!114 &348672174
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 348672169}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d91e2982698893b4799db0883db36b2c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  target: {fileID: 134922951}
+  stateName: Hip_Hop
 --- !u!1 &535853411
 GameObject:
   m_ObjectHideFlags: 0
@@ -597,6 +636,7 @@ GameObject:
   - component: {fileID: 535853415}
   - component: {fileID: 535853414}
   - component: {fileID: 535853413}
+  - component: {fileID: 535853416}
   m_Layer: 5
   m_Name: Macarena_Anim_Btn
   m_TagString: Untagged
@@ -706,6 +746,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 535853411}
   m_CullTransparentMesh: 1
+--- !u!114 &535853416
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 535853411}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d91e2982698893b4799db0883db36b2c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  target: {fileID: 134922951}
+  stateName: Macarena
 --- !u!1 &839934556
 GameObject:
   m_ObjectHideFlags: 0
@@ -863,6 +917,7 @@ GameObject:
   - component: {fileID: 1264792955}
   - component: {fileID: 1264792954}
   - component: {fileID: 1264792953}
+  - component: {fileID: 1264792956}
   m_Layer: 5
   m_Name: House_Anim_Btn
   m_TagString: Untagged
@@ -972,6 +1027,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1264792951}
   m_CullTransparentMesh: 1
+--- !u!114 &1264792956
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1264792951}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d91e2982698893b4799db0883db36b2c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  target: {fileID: 134922951}
+  stateName: House
 --- !u!1 &1447943181
 GameObject:
   m_ObjectHideFlags: 0
