@@ -1,6 +1,6 @@
 # Life is the Game Test
 ## Requirements
-* [ ] Menu with character animations
+* [X] Menu with character animations [[#1](https://github.com/Steback/LitGame/pull/1)]
 * [ ] Player FPV(First Person View) and scene transition
 * [ ] Game UI 
 * [ ] Parabolic firing weapon
