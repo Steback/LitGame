@@ -9,6 +9,7 @@ namespace UI
     {
         [SerializeField] private Animator target;
         [SerializeField] private String stateName;
+        [SerializeField] private GameInstance gameInstance;
         
         private int stateNameHash;
 
@@ -26,6 +27,10 @@ namespace UI
         void OnButtonClick()
         {
             target.Play(stateNameHash);
+            if (gameInstance != null)
+            {
+                gameInstance.data.defaultAnimationState = stateName;
+            }
         }
     }
 }
