@@ -1847,12 +1847,7 @@ Animator:
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
   m_LinearVelocityBlending: 0
-  m_WarningMessage: "\nBinding warning: Some generic clip(s) animate transforms that
-    are already bound by a Humanoid avatar. These transforms can only be changed
-    by Humanoid clips.\n\tTransform 'Root'\n\tTransform 'IndexFinger_02'\n\tTransform
-    'Elbow_R'\n\tTransform 'Finger_02'\n\tTransform 'Finger_03'\n\tTransform 'Ball_L'\n\tTransform
-    'Thumb_02'\n\tTransform 'Ball_R'\n\tTransform 'Clavicle_L'\n\tTransform 'Finger_01'\n\tand
-    more ...\n\tFrom animation clip 'mixamo.com'\n\tFrom animation clip 'mixamo.com'"
+  m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
@@ -1868,8 +1863,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 24aa011b1588a5847a6380dc609e408e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  followCamera: {fileID: 0}
   cameraPrefab: {fileID: 7658198092676208827, guid: 8ec046faa978ee145afa549c1be9bb0f, type: 3}
+  followCamera: {fileID: 0}
 --- !u!114 &8307316523082897901
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1882,7 +1877,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 62899f850307741f2a39c98a8b639597, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Actions: {fileID: -944628639613478452, guid: dc87d741fe9d2fa429febfb41745db0f, type: 3}
+  m_Actions: {fileID: -944628639613478452, guid: c1595d867746792449820f04f77347ff, type: 3}
   m_NotificationBehavior: 0
   m_UIInputModule: {fileID: 0}
   m_DeviceLostEvent:
@@ -1897,7 +1892,7 @@ MonoBehaviour:
   m_ActionEvents: []
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
-  m_DefaultActionMap: Gameplay
+  m_DefaultActionMap: Player
   m_SplitScreenIndex: -1
   m_Camera: {fileID: 0}
 --- !u!54 &3335522942861622800
@@ -1928,7 +1923,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 19122362cba0fd9439429d2b5e63fd9a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 5
+  speed: 100
+  rotationSpeed: 5
 --- !u!136 &3793317154812740348
 CapsuleCollider:
   m_ObjectHideFlags: 0

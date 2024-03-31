@@ -39,6 +39,9 @@ public class PlayerController : MonoBehaviour
                 }
             }
         }
+
+        Cursor.visible = false;
+        Cursor.lockState = CursorLockMode.Locked;
     }
 
     private void FixedUpdate()
@@ -59,8 +62,14 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-    public void OnShot(InputValue value)
+    public void OnFire(InputValue value)
     {
         Debug.Log("OnShot");
+    }
+
+    public void OnLook(InputValue value)
+    {
+        Vector2 input = value.Get<Vector2>();
+        _movement.Rotate(input.x);
     }
 }
