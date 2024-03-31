@@ -17,7 +17,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private WeaponSlot weaponSlot;
     
     
-    private static readonly int SpeedHash = Animator.StringToHash("Speed");
+    private static readonly int IsMovingHash = Animator.StringToHash("IsMoving");
 
     private void Awake()
     {
@@ -56,11 +56,11 @@ public class PlayerController : MonoBehaviour
         _movementInput = value.Get<Vector2>();
         if (_movementInput == Vector2.zero)
         {
-            _animator.SetFloat(SpeedHash, 0.0f);
+            _animator.SetBool(IsMovingHash, false);
         }
         else
         {
-            _animator.SetFloat(SpeedHash, Math.Min(_movementInput.magnitude, 1.0f));
+            _animator.SetBool(IsMovingHash, true);
         }
     }
 
