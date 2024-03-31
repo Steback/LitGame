@@ -6,8 +6,15 @@ using UnityEngine;
 public class Weapon : MonoBehaviour
 {
     private bool isEquiped = false;
-
+    
     [SerializeField] private RuntimeAnimatorController runtimeAnimatorController;
+    
+    public delegate void OnEquipped();
+    public OnEquipped onEquipped;
+    
+    public delegate void OnUnequipped();
+    public OnUnequipped onUnequipped;
+    
     
     private void OnCollisionEnter(Collision other)
     {
@@ -16,6 +23,19 @@ public class Weapon : MonoBehaviour
         {
             playerController.SetWeapon(this);
             playerController.GetComponent<Animator>().runtimeAnimatorController = runtimeAnimatorController;
+        }
+    }
+
+    public void SetEquipped(bool inIsEquipped)
+    {
+        isEquiped = inIsEquipped;
+        if (isEquiped && onEquipped != null)
+        {
+            onEquipped.Invoke();
+        }
+        else if (onUnequipped != null)
+        {
+            onUnequipped.Invoke();
         }
     }
 }

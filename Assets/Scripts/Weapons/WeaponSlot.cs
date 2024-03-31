@@ -13,7 +13,14 @@ public class WeaponSlot : MonoBehaviour
     {
         if (inWeapon != null)
         {
+            if (_weapon != null)
+            {
+                _weapon.SetEquipped(false);
+                _weapon = null;
+            }
+            
             _weapon = inWeapon;
+            _weapon.SetEquipped(true);
 
             Transform weaponTransform = _weapon.GetComponent<Transform>();
             weaponTransform.SetParent(transform);

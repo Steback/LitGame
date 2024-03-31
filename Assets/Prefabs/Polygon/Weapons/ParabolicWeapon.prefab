@@ -95,7 +95,7 @@ GameObject:
   - component: {fileID: 64617245995469756}
   - component: {fileID: 6758474164752749994}
   m_Layer: 0
-  m_Name: SM_Prop_Rifle_01
+  m_Name: ParabolicWeapon
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
