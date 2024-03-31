@@ -4,21 +4,24 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-[RequireComponent(typeof(PlayerInput), typeof(Movement))]
+[RequireComponent(typeof(PlayerInput), typeof(Movement), typeof(Animator))]
 public class PlayerController : MonoBehaviour
 {
     private Transform _transform;
     private Movement _movement;
     private Vector2 _movementInput;
+    private Animator _animator;
+    [SerializeField] private GameObject cameraPrefab;
     
     public FollowCamera followCamera;
     
-    [SerializeField] private GameObject cameraPrefab;
+    private static readonly int SpeedHash = Animator.StringToHash("Speed");
 
     private void Awake()
     {
         _transform = GetComponent<Transform>();
         _movement = GetComponent<Movement>();
+        _animator = GetComponent<Animator>();
     }
 
     // Start is called before the first frame update
@@ -46,6 +49,14 @@ public class PlayerController : MonoBehaviour
     public void OnMove(InputValue value)
     { 
         _movementInput = value.Get<Vector2>();
+        if (_movementInput == Vector2.zero)
+        {
+            _animator.SetFloat(SpeedHash, 0.0f);
+        }
+        else
+        {
+            _animator.SetFloat(SpeedHash, Math.Min(_movementInput.magnitude, 1.0f));
+        }
     }
 
     public void OnShot(InputValue value)
