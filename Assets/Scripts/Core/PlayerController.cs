@@ -11,9 +11,11 @@ public class PlayerController : MonoBehaviour
     private Movement _movement;
     private Vector2 _movementInput;
     private Animator _animator;
-    [SerializeField] private GameObject cameraPrefab;
+    private FollowCamera _followCamera;
     
-    public FollowCamera followCamera;
+    [SerializeField] private GameObject cameraPrefab;
+    [SerializeField] private WeaponSlot weaponSlot;
+    
     
     private static readonly int SpeedHash = Animator.StringToHash("Speed");
 
@@ -32,10 +34,10 @@ public class PlayerController : MonoBehaviour
             GameObject cameraInstance = Instantiate(cameraPrefab, _transform.position, _transform.rotation);
             if (cameraInstance != null)
             {
-                followCamera = cameraInstance.GetComponent<FollowCamera>();
-                if (followCamera != null)
+                _followCamera = cameraInstance.GetComponent<FollowCamera>();
+                if (_followCamera != null)
                 {
-                    followCamera.setTarget(transform);
+                    _followCamera.setTarget(transform);
                 }
             }
         }
@@ -71,5 +73,13 @@ public class PlayerController : MonoBehaviour
     {
         Vector2 input = value.Get<Vector2>();
         _movement.Rotate(input.x);
+    }
+
+    public void SetWeapon(Weapon inWeapon)
+    {
+        if (weaponSlot != null)
+        {
+            weaponSlot.SetWeapon(inWeapon);
+        }
     }
 }
