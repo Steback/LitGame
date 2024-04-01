@@ -95,7 +95,7 @@ GameObject:
   - component: {fileID: 64617245995469756}
   - component: {fileID: 6758474164752749994}
   m_Layer: 0
-  m_Name: ParabolicWeapon
+  m_Name: Weapon
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -193,7 +193,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fca0757ebce51ad4a891d700a7beaea6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _bullets: []
   runtimeAnimatorController: {fileID: 22100000, guid: 082c5a5d483c70e4aa85b851e160c9b7, type: 2}
+  bulletPrefab: {fileID: 5116868094593039873, guid: 6ed8d7cc9d4d2c243b93613b1d6f0c92, type: 3}
+  poolSize: 10
+  shotOffset: 1
+  shotForce: 10
 --- !u!1 &1549202553469370
 GameObject:
   m_ObjectHideFlags: 0

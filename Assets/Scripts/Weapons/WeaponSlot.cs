@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class WeaponSlot : MonoBehaviour
 {
-    private Weapon _weapon;
+    public Weapon weapon;
 
     [SerializeField] private Vector3 offsetPosition;
     [SerializeField] private Vector3 offsetRotation;
@@ -13,16 +13,16 @@ public class WeaponSlot : MonoBehaviour
     {
         if (inWeapon != null)
         {
-            if (_weapon != null)
+            if (weapon != null)
             {
-                _weapon.SetEquipped(false);
-                _weapon = null;
+                weapon.SetEquipped(false);
+                weapon = null;
             }
             
-            _weapon = inWeapon;
-            _weapon.SetEquipped(true);
+            weapon = inWeapon;
+            weapon.SetEquipped(true);
 
-            Transform weaponTransform = _weapon.GetComponent<Transform>();
+            Transform weaponTransform = weapon.GetComponent<Transform>();
             weaponTransform.SetParent(transform);
             weaponTransform.localPosition = offsetPosition;
             

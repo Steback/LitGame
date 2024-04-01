@@ -18,6 +18,7 @@ public class PlayerController : MonoBehaviour
     
     
     private static readonly int IsMovingHash = Animator.StringToHash("IsMoving");
+    private static readonly int FiringHash = Animator.StringToHash("Firing");
 
     private void Awake()
     {
@@ -66,7 +67,10 @@ public class PlayerController : MonoBehaviour
 
     public void OnFire(InputValue value)
     {
-        Debug.Log("OnShot");
+        if (weaponSlot != null && weaponSlot.weapon != null)
+        {
+            _animator.SetTrigger(FiringHash);
+        }
     }
 
     public void OnLook(InputValue value)
@@ -81,5 +85,10 @@ public class PlayerController : MonoBehaviour
         {
             weaponSlot.SetWeapon(inWeapon);
         }
+    }
+
+    public void Fire()
+    {
+        weaponSlot.weapon.Fire();
     }
 }
