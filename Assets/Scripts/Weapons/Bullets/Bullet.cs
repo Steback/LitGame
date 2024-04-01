@@ -14,13 +14,12 @@ public class Bullet : MonoBehaviour
     {
         rigidbody = GetComponent<Rigidbody>();
         Collider = GetComponent<Collider>();
+        Reset();
     }
 
     private void Start()
     {
-        transform.position = sleepPosition;
-        rigidbody.isKinematic = true;
-        Collider.enabled = false;
+        
     }
 
     private void Update()
@@ -36,15 +35,23 @@ public class Bullet : MonoBehaviour
     {
         rigidbody.isKinematic = false;
         Collider.enabled = true;
-        rigidbody.velocity = velocity;
+        ShotEffect(velocity);
         resetTimer = timeToReset;
+    }
+
+    public virtual void ShotEffect(Vector3 velocity)
+    {
+        rigidbody.velocity = velocity;
     }
 
     public void Reset()
     {
         transform.position = sleepPosition;
-        rigidbody.isKinematic = true;
-        Collider.enabled = false;
+        if (rigidbody)
+        {
+            rigidbody.isKinematic = true;
+            Collider.enabled = false;
+        }
     }
 
     private void OnCollisionEnter(Collision other)

@@ -198,7 +198,7 @@ MonoBehaviour:
   bulletPrefab: {fileID: 5116868094593039873, guid: af560fe8128c8db498911d9ee278f98b, type: 3}
   poolSize: 10
   shotOffset: 1
-  shotForce: 10
+  shotForce: 40
 --- !u!1 &1549202553469370
 GameObject:
   m_ObjectHideFlags: 0

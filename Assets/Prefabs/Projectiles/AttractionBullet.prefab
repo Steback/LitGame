@@ -12,8 +12,8 @@ GameObject:
   - component: {fileID: 7138528948019846449}
   - component: {fileID: 3941064973802276608}
   - component: {fileID: 8971307661811593769}
-  - component: {fileID: 4770144074028204777}
   - component: {fileID: 7813859442921904218}
+  - component: {fileID: 2245571180377657470}
   m_Layer: 0
   m_Name: AttractionBullet
   m_TagString: Untagged
@@ -100,22 +100,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 112
   m_CollisionDetection: 0
---- !u!114 &4770144074028204777
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5116868094593039873}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 34a2b66456a96b249baf7d072bea4f6f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  rigidbody: {fileID: 0}
-  Collider: {fileID: 0}
-  timeToReset: 10
-  sleepPosition: {x: 0, y: -100, z: 0}
 --- !u!135 &7813859442921904218
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -129,3 +113,25 @@ SphereCollider:
   serializedVersion: 2
   m_Radius: 0.5
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &2245571180377657470
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5116868094593039873}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: de28db6d6bdc994408a9bb89dfaad079, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rigidbody: {fileID: 0}
+  Collider: {fileID: 0}
+  timeToReset: 10
+  sleepPosition: {x: 0, y: -100, z: 0}
+  pullRadius: 2
+  maxSeparation: 1
+  pullForce: 100
+  interactableMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
