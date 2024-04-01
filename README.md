@@ -4,7 +4,7 @@
 * [X] Player FPV(First Person View) and scene transition [[#2](https://github.com/Steback/LitGame/pull/2)]
 * [X] Game UI [[#4](https://github.com/Steback/LitGame/pull/4)]
 * [X] Parabolic firing weapon [[#7](https://github.com/Steback/LitGame/pull/7)]
-* [ ] Attraction firing weapon
+* [X] Attraction firing weapon [[#8](https://github.com/Steback/LitGame/pull/8)]
 * [ ] Gravity gun
 
 ## Dependencies
