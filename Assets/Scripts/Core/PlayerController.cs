@@ -7,11 +7,11 @@ using UnityEngine.InputSystem;
 [RequireComponent(typeof(PlayerInput), typeof(Movement), typeof(Animator))]
 public class PlayerController : MonoBehaviour
 {
-    private Transform _transform;
-    private Movement _movement;
-    private Vector2 _movementInput;
-    private Animator _animator;
-    private FollowCamera _followCamera;
+    private Transform _transform = null ;
+    private Movement _movement = null;
+    private Vector2 _movementInput = Vector3.zero;
+    private Animator _animator = null;
+    private FollowCamera _followCamera = null;
     
     [SerializeField] private GameObject cameraPrefab;
     [SerializeField] private WeaponSlot weaponSlot;
