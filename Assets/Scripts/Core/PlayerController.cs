@@ -11,11 +11,14 @@ public class PlayerController : MonoBehaviour
     private Movement _movement;
     private Vector2 _movementInput;
     private Animator _animator;
+    private FollowCamera _followCamera;
+    
     [SerializeField] private GameObject cameraPrefab;
+    [SerializeField] private WeaponSlot weaponSlot;
     
-    public FollowCamera followCamera;
     
-    private static readonly int SpeedHash = Animator.StringToHash("Speed");
+    private static readonly int IsMovingHash = Animator.StringToHash("IsMoving");
+    private static readonly int FiringHash = Animator.StringToHash("Firing");
 
     private void Awake()
     {
@@ -32,10 +35,10 @@ public class PlayerController : MonoBehaviour
             GameObject cameraInstance = Instantiate(cameraPrefab, _transform.position, _transform.rotation);
             if (cameraInstance != null)
             {
-                followCamera = cameraInstance.GetComponent<FollowCamera>();
-                if (followCamera != null)
+                _followCamera = cameraInstance.GetComponent<FollowCamera>();
+                if (_followCamera != null)
                 {
-                    followCamera.setTarget(transform);
+                    _followCamera.setTarget(transform);
                 }
             }
         }
@@ -54,22 +57,38 @@ public class PlayerController : MonoBehaviour
         _movementInput = value.Get<Vector2>();
         if (_movementInput == Vector2.zero)
         {
-            _animator.SetFloat(SpeedHash, 0.0f);
+            _animator.SetBool(IsMovingHash, false);
         }
         else
         {
-            _animator.SetFloat(SpeedHash, Math.Min(_movementInput.magnitude, 1.0f));
+            _animator.SetBool(IsMovingHash, true);
         }
     }
 
     public void OnFire(InputValue value)
     {
-        Debug.Log("OnShot");
+        if (weaponSlot != null && weaponSlot.weapon != null)
+        {
+            _animator.SetTrigger(FiringHash);
+        }
     }
 
     public void OnLook(InputValue value)
     {
         Vector2 input = value.Get<Vector2>();
         _movement.Rotate(input.x);
+    }
+
+    public void SetWeapon(Weapon inWeapon)
+    {
+        if (weaponSlot != null)
+        {
+            weaponSlot.SetWeapon(inWeapon);
+        }
+    }
+
+    public void Fire()
+    {
+        weaponSlot.weapon.Fire();
     }
 }
