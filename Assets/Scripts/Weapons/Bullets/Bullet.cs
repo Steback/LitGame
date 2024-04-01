@@ -2,6 +2,7 @@ using UnityEngine;
 
 public class Bullet : MonoBehaviour
 {
+    private bool isMoving = false;
     private float resetTimer = 0.0f;
     public Rigidbody rigidbody;
     public Collider Collider;
@@ -9,7 +10,6 @@ public class Bullet : MonoBehaviour
     [SerializeField] private float timeToReset = 10.0f;
     [SerializeField] private Vector3 sleepPosition = new Vector3(0.0f, -100.0f, 0.0f);
     
-
     private void Awake()
     {
         rigidbody = GetComponent<Rigidbody>();
@@ -17,17 +17,15 @@ public class Bullet : MonoBehaviour
         Reset();
     }
 
-    private void Start()
-    {
-        
-    }
-
     private void Update()
     {
-        resetTimer -= Time.deltaTime;
-        if (resetTimer < 0)
+        if (isMoving)
         {
-            Reset();
+            resetTimer -= Time.deltaTime;
+            if (resetTimer < 0)
+            {
+                Reset();
+            }
         }
     }
 
@@ -35,8 +33,11 @@ public class Bullet : MonoBehaviour
     {
         rigidbody.isKinematic = false;
         Collider.enabled = true;
+        
         ShotEffect(velocity);
+        
         resetTimer = timeToReset;
+        isMoving = true;
     }
 
     public virtual void ShotEffect(Vector3 velocity)
@@ -52,6 +53,8 @@ public class Bullet : MonoBehaviour
             rigidbody.isKinematic = true;
             Collider.enabled = false;
         }
+
+        isMoving = false;
     }
 
     private void OnCollisionEnter(Collision other)
