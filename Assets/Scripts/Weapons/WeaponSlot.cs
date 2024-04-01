@@ -13,6 +13,8 @@ public class WeaponSlot : MonoBehaviour
     {
         if (inWeapon != null)
         {
+            Debug.Log(offsetPosition);
+            Debug.Log(offsetRotation);
             if (weapon != null)
             {
                 weapon.SetEquipped(false);

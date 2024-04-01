@@ -1589,6 +1589,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2fb05e26409d2c64a831da718a0c65af, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  weapon: {fileID: 0}
   offsetPosition: {x: 0.09361891, y: 0.042642944, z: -0.035620846}
   offsetRotation: {x: 349.97485, y: 71.86539, z: 279.88306}
 --- !u!1 &1708259056450032
